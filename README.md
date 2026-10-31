@@ -63,6 +63,37 @@ to a payload too large to commit.
 payload reference, so geometry is inlined — 85,435 bytes on one node of that example, which is why
 the mapped workflow above is 11 kB rather than 5 kB. It is a known gap, not a choice.
 
+## The discussion, and who governs it
+
+A project repository is also where the investigation is argued out. GitHub Discussions is a
+joint public record of that argument — attributed, timestamped, linkable, and readable by anyone
+with no credential — which is what an open-source project has always had and most published
+research does not.
+
+**The governance is yours, not the application's.** Fieldwork reads nothing here and enforces
+nothing. What it ships is one form, `.github/DISCUSSION_TEMPLATE/decisions.yml`, and the reason it
+is a file rather than a setting is that a file is version-controlled: you change how your project
+deliberates by opening a pull request against it, and the change is reviewable like any other.
+
+**One form, for decisions only.** Structure imposed on exploration is friction, and the point of
+this application is to decrease friction. A decision is the one kind of post that must be written
+down, so it is the one kind with required fields — including the two that are the governance
+rather than the record:
+
+- **Where the ruling lands.** A decision that reaches only the thread has not been acted on.
+- **Who carries it out.** Attribution is a claim about who did the work, so it is asked for.
+
+Everything else stays open text.
+
+**To turn it on:** enable Discussions in this repository's settings and create a category whose
+slug is `decisions`. The form binds to the category by file name, so a category by any other name
+needs the file renamed to match.
+
+**Not verified, and worth checking the first time you generate a project from this template:**
+whether discussion *categories* come across. The form is a file and certainly travels; categories
+are repository settings and may not. If they do not, creating the category is a one-time step per
+project.
+
 ## Before you share this
 
 - **Add a licence.** There is deliberately no `LICENSE` here: a template that picks one picks it for
