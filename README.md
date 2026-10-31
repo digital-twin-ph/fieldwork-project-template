@@ -63,6 +63,24 @@ to a payload too large to commit.
 payload reference, so geometry is inlined — 85,435 bytes on one node of that example, which is why
 the mapped workflow above is 11 kB rather than 5 kB. It is a known gap, not a choice.
 
+## The repository checks its own claims
+
+`node scripts/validate-project.mjs`, and on every push and pull request through
+`.github/workflows/validate.yml`. No dependencies and no Fieldwork: a project repository stands on
+its own.
+
+It checks what the format promises and nothing else — that every workflow listed exists and every
+workflow present is listed, that every payload a node references is named in the manifest and
+matches its digest and byte count, that every declared read carries the fields that would rebuild
+it, that every edge joins two nodes that are there, and that a note's id is its filename.
+
+**The failure it exists for is a co-author's.** Commit a graph that references an asset you forgot
+to add and the project is broken for everybody else rather than for you. The check turns that into
+a red mark on your own pull request, which is what makes review between co-owners possible at all.
+
+Verified against a real conversion on 2026-10-31 — eight workflows, 43 nodes, 13 notes, 4 assets,
+one declared read — and against six deliberate breakages, each of which it named by file.
+
 ## The discussion, and who governs it
 
 A project repository is also where the investigation is argued out. GitHub Discussions is a
