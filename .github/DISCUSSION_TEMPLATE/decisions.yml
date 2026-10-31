@@ -1,0 +1,63 @@
+# A DECISION IS DOCUMENTED, AND THE FORM IS HOW. The rest of this repository's discussion is
+# deliberately unstructured: structure imposed on exploration is friction, and the mission is to
+# decrease friction. A decision is the one kind that must be written down, so it is the one kind
+# with required fields.
+#
+# THIS FILE IS YOURS. It is governance the authors exercise, not the application: it lives in the
+# repository, it changes by pull request, and nothing in Fieldwork reads or enforces it. Edit the
+# fields, add categories, or delete it.
+#
+# The file name must match the discussion category's slug. Create a category called "Decisions"
+# in the repository's Discussions settings, or rename this file to match one you already have.
+body:
+  - type: textarea
+    attributes:
+      label: What was decided
+      description: One sentence, in the present tense, stating the ruling itself and not the discussion around it.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: What it rules out
+      description: >
+        The alternatives that were live, and why this one won over them. A decision with no
+        discarded alternative was not a decision.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: The evidence
+      description: >
+        What was measured, with the numbers, and where anybody can re-run it. If nothing was
+        measured, write that plainly — an argued decision is a decision, and recording it as
+        argued rather than measured is what keeps the two apart later.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: What this does not establish
+      description: >
+        The claims a reader might take from this and should not. Costs accepted, cases untested,
+        and anything true only under conditions that were not stated.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Where the ruling lands
+      description: >
+        A decision that reaches only this thread has not been acted on. Name the artifact it has
+        to change — a widget parameter, a note, a file in this repository, an experiment record —
+        and link back here from it once it has.
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Who carries it out
+      description: A GitHub login. Attribution is a claim about who did the work, so it is asked for rather than inferred.
+    validations:
+      required: true
