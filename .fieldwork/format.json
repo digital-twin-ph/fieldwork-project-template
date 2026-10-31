@@ -1,0 +1,18 @@
+{
+  "schema": "fieldwork/project-repository/1",
+  "describes": "The on-disk layout of a Fieldwork project held in a git repository, so several authors can co-own one.",
+  "paths": {
+    "project.json": "The project record: name, subject, authors, when it began, and which workflow files belong to it. One file, rarely edited, conflicts rarely.",
+    "workflows/*.json": "One workflow graph per file. THE UNIT OF COLLABORATION: two authors working on different workflows never touch the same blob; two working on the same one collide, and should.",
+    "notes/*.json": "One note per file. The write-up is assembled from these at render time; it is not authored as a file.",
+    "assets/manifest.json": "Every payload a node refers to, by path, sha256 and bytes — and, for a payload that was acquired rather than committed, the declaration that reproduces it.",
+    "assets/*": "Payloads small enough to belong in a repository, as plain text that diffs."
+  },
+  "rules": {
+    "granularity": "A file is a workflow. Chosen because there is no merge base in a browser, so a conflict can be made rare and legible but never merged — which makes file granularity the merge strategy rather than a serialisation convenience.",
+    "payloads": "A node does not inline a payload. It names one in assets/manifest.json by path and digest.",
+    "acquired": "A payload that was read from a large source — an OSM extract, a raster, a downloaded network — is NOT committed. The declaration that reproduces it is: source, the bytes and digest of what was read, the box, what was requested and what was dropped. See `acquired` in assets/manifest.json.",
+    "geometry": "A study area's geometry is inlined today because `AreaParams` declares no payload reference. It is the one asset this layout cannot yet externalise; measured at 85,435 bytes on one node of the South London example."
+  },
+  "notYet": "NOTHING IN FIELDWORK READS OR WRITES THIS LAYOUT. The application exports and imports one gzipped project document; this is the co-owned format it is not. The converter between the two is unbuilt, and a repository made from this template is a place to put work rather than a thing the application can open. See experiment 150."
+}

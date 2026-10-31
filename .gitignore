@@ -1,0 +1,3 @@
+# Exports are built from the files in this repository, not the other way round.
+fieldwork-project.json.gz
+*.osm.pbf

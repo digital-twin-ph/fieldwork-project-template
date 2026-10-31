@@ -1,0 +1,27 @@
+THIRD-PARTY MATERIAL IN THIS PROJECT
+====================================
+
+Replace this file's contents with the terms that apply to what this project carries,
+and delete the guidance below once you have.
+
+Record one section per source. A section should say, at minimum:
+
+  Source:   who published it, and where it was obtained
+  Licence:  the licence, by name and link
+  What was taken, and what was done to it
+
+Two things are worth stating that are easy to leave out:
+
+SHARE-ALIKE REACHES THIS REPOSITORY. Data under a licence such as the ODbL makes a
+work derived from it subject to the same terms. If a project file carries that data --
+not merely a figure drawn from it -- then this repository is a Derivative Database in
+part, and the obligation attaches here and not only to what you publish.
+
+ATTRIBUTION IS A CONDITION OF USE, NOT A COURTESY. A figure leaves the application and
+travels away from whatever page credited its sources. If the licence requires credit,
+the credit belongs on the figure.
+
+WHAT IS NOT COMMITTED STILL HAS TERMS. A payload reproduced from a declaration rather
+than committed -- see assets/README.md -- is still governed by the licence of the
+source it is read from, and that licence should be recorded here even though the bytes
+are not in this repository.
