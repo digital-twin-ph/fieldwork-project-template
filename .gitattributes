@@ -1,0 +1,16 @@
+# A WORKFLOW IS A GRAPH, AND A GRAPH IS NOT LINE-MERGEABLE.
+#
+# Measured 2026-10-31 on the South London example, two authors, two clones. Without this
+# line, git merged two authors' edits to DIFFERENT NODES of the same workflow silently:
+# the result was a graph neither of them drew, and nobody reviewed the combination.
+# File granularity alone does not prevent that, because git merges by hunk and not by file.
+#
+# With it, the three cases come out as intended:
+#   different workflows ................ clean merge
+#   same workflow, different nodes ..... conflict
+#   same workflow, same node ........... conflict
+#
+# It also makes a checkout behave the way the GitHub Contents API already does from the
+# browser, where a blob-sha precondition refuses a stale write rather than interleaving it.
+# Two co-owners on two different substrates then get one conflict regime instead of two.
+workflows/*.json -merge
